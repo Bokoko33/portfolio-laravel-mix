@@ -1,0 +1,19 @@
+<%
+var title = 'Portfolio'
+%>
+
+<%- include('/partials/header', { title }) -%>
+<%- include('/partials/menu') -%>
+
+<div class="js-target">
+  <section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
+        <div id="title">
+            <img src="<%= mix('/assets/images/title.png')%>"/>
+        </div>
+    </div>
+  </section>
+  
+</div>
+
+<%- include('/partials/footer') -%>

@@ -1,0 +1,830 @@
+$soft-black :#2d2d2d;
+$work-width-pc:76vw;
+$work-width-sp:84vw;
+$thumb-width-pc:($work-width-pc - 1)/2;
+
+$view-width:100vw;
+$side-space-sum:200px;
+
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+
+
+#background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height:100vh;
+    background-color: rgb(250,250,250);
+    z-index: -100;
+}
+// .contents{
+//     // display: none;
+// }
+
+#defaultCanvas0{
+    z-index: -20;
+    top: 0;
+    position: fixed;
+    transition: 1.2s;
+}
+header{
+    z-index: 10;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    @include pc{
+        height: 100px;
+        background-color: rgba($color: #fff, $alpha: 0);
+    }
+    @include sp{
+        height: 65px;
+        background-color:rgb(250,250,250);
+    }
+    #logo-icon{
+        position: fixed;
+        @include pc{
+            top: 17px;
+            left: 3.3vw;
+            width: 46px;
+        }
+        @include sp{
+            top: 15px;
+            left: 8vw;
+            width: 26px;
+        }
+    
+        img{
+            width: 100%;
+        }
+    }
+    .hamburger-icon{
+        @include pc{
+            display: none;
+        }
+        @include sp{
+            float: right;
+            position: relative;
+            top: 10px;
+            right: 6vw;
+            width: 50px;
+            height: 50px;
+            background-color:rgb(250,250,250);
+            text-align: center;
+            padding: 5px;
+
+            span{
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                position: absolute;
+                transition: all 0.3s;
+                width: 42px;
+                height: 1px;
+                background:$soft-black;
+                display: block;
+            }
+            .first{
+                transform: translateY(-12px) scale(1);
+            }
+            .second{
+                background: none;
+                &:before, &:after {
+                    transition: all 0.3s;
+                    content: "";
+                    width: 42px;
+                    height: 1px;
+                    background:$soft-black;
+                    display: block;
+                    transform: rotate(0deg);
+                    position: absolute;
+                }
+            }
+            .third {
+                transform: translateY(12px) scale(1);
+            }
+        }
+    }
+    .is-open {
+        @include sp{
+            .first {
+                transform: translateY(0px) scale(0);
+              }
+              .third {
+                transform: translateY(0px) scale(0);
+              }
+              .second {
+                &:before {
+                  transform: rotate(45deg);
+                }
+                &:after {
+                  transform: rotate(-45deg);
+                }
+              }
+        }
+    }
+}
+a{
+    color: $soft-black;
+    text-decoration: none;
+}
+p{
+    color: $soft-black;
+}
+ul{
+    list-style: none;
+}
+*{
+    letter-spacing: 1.1px;
+}
+h1,h2,h3{
+    font-family: 'Lato';
+}
+h1{
+    letter-spacing: 2.2px;
+}
+.menu{
+    z-index: 8;
+    @include pc{
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        ul{
+            li{
+                font-size: 16px;
+                font-family: 'Lato';
+                font-weight: 300;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                &:after{
+                    content: ""; //これ書かないと表示されない
+                    width: 0px;
+                    height: 1px;
+                    background: $soft-black;
+                    display: block;
+                    margin: auto 5px;
+                    transition: all 0.2s;
+                }
+                &:hover{
+                    &:after{
+                        width: 7px;
+                    }
+                }
+            }
+        }
+    }
+    @include sp{
+        display: none;
+        background-color: rgb(250,250,250);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        ul{
+            width: 80%;
+            height: 50%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            // top: 0;
+            bottom: 20vh;
+            margin: auto;
+            text-align: center;
+            li{
+                font-size: 28px;
+                font-family: 'Lato';
+                font-weight: 300;
+                margin: 50px 0;
+            }
+        }
+    }
+}
+#scroll-top{
+    display: none;
+    // visibility: hidden;
+    right: 3.4vw;
+    bottom: 26px;
+    width: 58px;
+    position: fixed;
+    // transition: 0.3s ease;
+    img{
+        width: 100%;
+    }
+    // :hover{
+    //     transform: translateY(-5px);
+    // }
+}
+
+//トップページ
+#title{
+    position: absolute;
+    @include pc{
+        top: 44vh;
+        left: 18vw;
+        width: 320px;
+    }
+    @include sp{
+        top: 42vh;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 300px;
+        
+    }
+    img{
+        width: 100%;
+    }
+}
+//------------------
+
+//ワークページ
+.page-head{
+    @include pc{
+        padding-top:  120px;
+        padding-bottom: 100px;
+        width: 100%;
+    }
+    @include sp{
+        padding-top:  100px;
+        padding-bottom: 70px;
+        width: 100%;
+    }
+    img{
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 40px;
+        position: absolute;
+    }
+    
+    
+}
+.work-wrapper{ 
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include pc{
+        width: $work-width-pc;
+        padding-bottom: 120px;
+    }
+    @include sp{
+        width: $work-width-sp;
+        padding-bottom: 60px;
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 30px auto;
+        padding: 0;
+        li{
+            .work-thumb{
+                background-color: $soft-black;
+                position: relative;
+                overflow: hidden;
+                @include pc{
+                    width: $thumb-width-pc;
+                    height: $thumb-width-pc/1.618;
+                    margin: 0.5vw auto;
+                }
+                @include sp{
+                    width: $work-width-sp;
+                    height: $work-width-sp/1.618;
+                    margin: 8px auto;
+                }
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.6s ease;
+                }
+                .hover-mask{
+                    position: absolute;
+                    object-fit: cover;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 2vw;
+                    // display: flex;
+                    width:100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.6);
+                    opacity: 0;
+                    transition: 0.6s ease;
+                    color: white;
+                    font-weight: 200;
+                    h1{
+                        font-size: 38px;
+                    }
+                    h2{
+                        font-size: 28px;
+                    }
+                }
+                :hover .hover-mask{
+                    opacity: 1;
+                    
+                }
+                :hover{
+                    img{
+                        transform: scale3d(1.2,1.2,1);
+                    }
+                }
+            }
+        
+        }
+    }
+}
+
+
+//作品詳細ページ
+#back-button{
+    z-index: 4;
+    @include pc{
+        left: 3.2vw;
+        top: 140px;
+        width: 82px;
+        position: fixed;
+        img{
+            width: 100%;
+        }
+    }
+    @include sp{
+        background-color: rgb(250,250,250);
+        top: 64px;
+        width: 100vw;
+        height: 50px;
+        position: fixed;
+        img{
+            margin: 12px 20px;
+            width: 24%;
+        }
+    }
+    
+}
+.work-details-wrapper{
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include pc{
+        width: $work-width-pc;
+        padding-top: 180px;
+        padding-bottom: 120px;
+    }
+    @include sp{
+        width: $work-width-sp;
+        padding-top: 140px;
+        padding-bottom: 100px;
+    }
+    
+    h1{
+        font-size: 36px;
+        font-weight: 200;
+        margin: 6px auto;
+    }
+    h2{
+        font-size: 28px;
+        font-weight: 200;
+        margin: 6px auto;
+        letter-spacing: 1.2px;
+    }
+    .work-top-image{
+        @include pc{
+            margin: 2.5vw auto;
+            width: 100%;
+            height: $work-width-pc/1.618;
+        }
+        @include sp{
+            // margin: 2.5vw auto;
+            width: 100%;
+            height: $work-width-sp/1.618;
+        }
+        img,iframe{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .work-summary{
+        @include pc{
+            padding: 3vw 0;
+            ul{
+                margin-bottom: 30px;
+                li{
+                    
+                    display: flex;
+                    margin: 10px auto;
+                    h3{
+                        width: 6vw;
+                    }
+                    p{
+                        font-family: 'Lato';
+                        font-weight: 200;
+                        margin: auto 1.2vw;
+                    }
+                    .work-details-text{
+                        margin-top: 3vw;
+                        width: 86%;
+                        a{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        @include sp{
+            padding: 10px 0;
+            ul{
+                margin-bottom: 30px;
+                li{
+                    display: flex;
+                    margin: 24px auto;
+                    h3{
+                        width: 0px; //リストを揃えつつ、outlineは画面いっぱいにするため
+                        height: 100%;
+                    }
+                    p{
+                        font-family: 'Lato';
+                        font-weight: 200;
+                        margin-left:24vw;
+                    }
+                    .work-details-text{
+                        // height: 100px;
+                        width: $work-width-sp;
+
+                        p{
+                            margin: 40px 0 20px;
+                        }
+                        a{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .work-sub-image{
+        ul{
+            @include sp{
+                margin: 20px auto;
+            }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+            li{
+                @include pc{
+                    width: $thumb-width-pc;
+                    height: $thumb-width-pc/1.618;
+                    margin: 0.3vw 0;
+                }
+                @include sp{
+                    width: $work-width-sp;
+                    height: $work-width-sp/1.618;
+                    margin: 8px 0;
+                }
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            } 
+        }
+    }
+    .work-PR-text{
+        left: 0;
+        right: 0;
+        margin: 6vw auto 5vw;
+        width: 90%;
+    }
+}
+.visit-link{
+    text-align: right;
+    font-family: 'Lato';
+    font-weight: 200;
+    @include pc{
+        margin-right:5vw ;
+        margin-top: 20px;
+        a{
+            
+            font-size: 26px;
+            display: flex;
+            transition: all 0.3s;
+            flex-direction: row-reverse;
+            &:before{ //row-reverseしてるので逆
+                content: ""; //これ書かないと表示されない
+                width: 10px;
+                height: 1px;
+                background: $soft-black;
+                display: block;
+                margin: auto 20px;
+                transition: all 0.3s;
+                transform-origin: left;
+            }
+
+            &:hover{
+                transform: translateX(5px);
+                &:before{
+                    transform: scaleX(3);
+                }
+            }
+        }
+        
+
+    }
+    @include sp{
+        margin-right:5vw ;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    
+}
+.work-end{
+    display: block;
+    right: 0;
+    left: 0;
+    text-align: center;
+    width: 100px;
+    @include pc{
+        // height: 5px;
+        margin: 120px auto;
+    }
+    @include sp{
+        
+        margin: 50px auto;
+    }
+    .point{
+        display: inline-block;
+        background-color: $soft-black;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        margin: 10px;
+    }
+}
+.otherworks{
+    @include pc{
+        height: 300px;
+        h2{
+            text-align: center;
+        }
+        .nav-to-other{
+            display: block;
+            width: 70vw;
+            right: 0;
+            left: 0;
+            margin: 100px auto;
+            text-align: center;
+            a{
+                width: 200px;
+                margin: 50px 0;
+                display: inline-block;
+                font-size: 20px;
+                font-family: 'Lato';
+                font-weight: 200;
+                // text-align: center;
+            }
+            #previous{
+                margin-left: 6vw;
+                float: left;
+                display: flex;
+                flex-direction: row-reverse;
+                transition: all 0.3s;
+                &:after{ //flex-dir:reverseしているのでafterで手前に
+                    content: ""; //これ書かないと表示されない
+                    width: 30px;
+                    height: 1px;
+                    background: $soft-black;
+                    display: block;
+                    margin: auto 20px;
+                    transition: all 0.3s;
+                    transform-origin: right;
+                    
+                }
+                &:hover{
+                    transform: translateX(-5px);
+                    &:after{
+                        transform: scaleX(3);
+                    }
+                }
+            }
+            #next{
+                margin-right: 6vw;
+                float: right;
+                display: flex;
+                justify-content: left;
+                transition: all 0.3s;
+                &:after{
+                    content: ""; //これ書かないと表示されない
+                    width: 30px;
+                    height: 1px;
+                    background: $soft-black;
+                    display: block;
+                    margin: auto 20px;
+                    transition: all 0.3s;
+                    transform-origin: left;
+                }
+
+                &:hover{
+                    transform: translateX(5px);
+                    &:after{
+                        transform: scaleX(3);
+                    }
+                }
+            }
+            
+            #vertical-line{
+                width: 1px;
+                height: 160px;
+                background-color: $soft-black;
+                display: inline-block;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                left: 0;
+                // border-radius: 0px;
+            }
+        }
+    }
+    @include sp{
+        height: 100px;
+        h2{
+            font-size: 20px;
+            text-align: center;
+        }
+        .nav-to-other{
+            display: block;
+            width: 70vw;
+            right: 0;
+            left: 0;
+            margin: 100px auto;
+            text-align: center;
+            a{
+                width: 100px;
+                margin: 20px;
+                display: inline-block;
+                font-size: 16px;
+                font-family: 'Lato';
+                font-weight: 200;
+                // text-align: center;
+            }
+            #previous{
+                text-align: right;
+                margin-left: 2px;
+                float: left;
+            }
+            #next{
+                text-align: left;
+                margin-right: 2px;
+                float: right;
+            }
+            #vertical-line{
+                width: 1px;
+                height: 60px;
+                background-color: $soft-black;
+                display: inline-block;
+                margin: 0 auto 100px;
+                position: absolute;
+                right: 0;
+                left: 0;
+                
+                // border-radius: 0px;
+            }
+        }
+    }
+}
+
+
+// アバウトページ
+#overlay{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #ffffff, $alpha: 0.6);
+    z-index: -1;
+    @include sp{
+        display: none;
+    }
+}
+.about-wrapper{
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Lato';
+    @include pc{
+        width: 70vw;
+    }
+    @include sp{
+        width: $work-width-sp;
+    }
+    h1{
+        font-size: 28px;
+        font-weight: 300;
+        margin: 14px 0;
+    }
+    .about-text,.about-skills,.about-message{
+        width: 100%;
+        p{
+            margin: 26px auto 60px;
+            width: 96%;
+        }
+        
+    }
+    .about-skills{
+        font-size: 20px;
+        font-weight: 200;
+    }
+    .about-message{
+        @include pc{
+            margin: 140px auto;
+        }
+        @include sp{
+            margin: 60px auto;
+        }
+        
+    }
+    #contact-top{
+        padding-bottom: 100px;
+        // #arrow-down{
+        //     margin: 36px auto;
+        //     width: 12px;
+        // }
+        // #email-button{
+        //     @include pc{
+        //         width: 320px;
+        //     }
+        //     @include sp(){
+        //         width: 260px;
+        //     }
+        // }
+        form{
+            width: 80%;
+            margin: 40px auto;
+            right: 0;
+            left: 0;
+            display: block;
+            font-family: 'Lato';
+            li{
+                margin: 60px auto;
+                width: 100%;
+                padding: 10px 15px;
+                p{
+                    margin: 10px auto;
+                    font-size: 22px;
+                }
+                
+                input{
+                    font-size: 18px;
+                    width: 100%;
+                    outline: none;
+                    border-bottom: 1.3px solid $soft-black;
+                }
+                textarea{
+                    font-size: 18px;
+                    width: 100%;
+                    height: 120px;
+                    outline: none;
+                    border: 1.3px solid $soft-black;
+
+                }
+            }
+            button{
+                font-size: 22px;
+                width: 140px;
+                height: 50px;
+                left: 0;
+                right:0;
+                margin: 100px auto;
+                display: block;
+                color: $soft-black;
+                border: 1.3px solid $soft-black;
+                transition: all 0.3s;
+                &:hover{
+                    background-color: $soft-black;
+                    color: rgb(250,250,250);
+                }
+            }
+        }
+    }
+}

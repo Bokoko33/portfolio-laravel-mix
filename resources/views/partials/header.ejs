@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="<%= mix('/assets/css/app.css') %>">
+  <link rel="stylesheet" type="text/css" 
+            href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+
+  <!-- googlefonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Prata&display=swap" rel="stylesheet">
+  
+  <title><%= title %></title>
+</head>
+
+<body>
+  <% /*
+  In development, if SVG is included in EJS,
+  injection of changes such as CSS by BrowserSync is prevented
+  Because svg-spritemap-webpack-plugin reacts for all changes,
+  and it causes EJS recompile and browser reloading
+  */ %>
+  <% if (process.env.NODE_ENV === 'production') { %>
+    <%- include('/../../public/assets/svg/sprite.svg') -%>
+  <% } %>
+
+  <header>
+    <div id="logo-icon">
+        <a id="I" href="">
+            <img src="<%= mix('/assets/images/logo.png')%>">
+        </a>
+    </div>
+  </header>
