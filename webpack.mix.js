@@ -28,6 +28,10 @@ mix
     `${srcRelativePath}/assets/js/app.js`,
     `${distRelativePath}/assets/js`
   )
+  .autoload({
+    jquery: ['$', 'window.jQuery'],
+    p5:['p5','window.p5']
+  })
   .eslint()
   .sass(
     `${srcRelativePath}/assets/css/app.scss`,

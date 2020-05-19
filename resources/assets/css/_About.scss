@@ -69,30 +69,37 @@
             left: 0;
             display: block;
             font-family: 'Lato',sans-serif;
-            li{
-                margin: 60px auto;
-                width: 100%;
-                padding: 10px 15px;
-                p{
-                    margin: 10px auto;
-                    font-size: 22px;
-                }
-                
-                input{
-                    font-size: 18px;
+            ul{
+                padding: 0;
+                li{
+                    
+                    margin: 60px auto;
                     width: 100%;
-                    outline: none;
-                    border-bottom: 1.3px solid $soft-black;
-                }
-                textarea{
-                    font-size: 18px;
-                    width: 100%;
-                    height: 120px;
-                    outline: none;
-                    border: 1.3px solid $soft-black;
-
+                    padding: 10px auto;
+                    p{
+                        margin: 10px auto;
+                        font-size: 22px;
+                    }
+                    
+                    input{
+                        font-size: 18px;
+                        width: 100%;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1.3px solid $soft-black;
+                        appearance: none;
+                    }
+                    textarea{
+                        font-size: 18px;
+                        width: 100%;
+                        height: 120px;
+                        outline: none;
+                        border: 1.3px solid $soft-black;
+    
+                    }
                 }
             }
+            
             button{
                 font-size: 22px;
                 width: 140px;
