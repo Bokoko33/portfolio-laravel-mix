@@ -1,0 +1,88 @@
+<%
+var title = 'Portfolio'
+%>
+
+<%- include('/partials/header', { title }) -%>
+
+<%- include('/partials/menu') -%>
+
+<div class="js-traget">
+    <section id="barba-wrapper" aria-live="polite">
+        <div class="barba-container">
+
+            <%- include('/partials/back-button') -%> 
+
+            <div class="work-details-wrapper">
+                <h1>Gemini</h1>
+                <h2>game</h2>
+                <div class="work-top-image">
+                    <img src="<%= mix('/assets/images/Gemini_04.png') %>">
+                </div>
+                <div class="work-summary">
+                    <ul>
+                        <li>
+                            <h3>Role</h3>
+                            <p>solo</p>
+                        </li>
+                        <li>
+                            <h3>Term</h3>
+                            <p>1 weeks</p>
+                        </li>
+                        <li>
+                            <h3>Skills</h3>
+                            <p>Unity / Adobe illustrator</p>
+                        </li>
+                        <li>
+                            <h3>Outline</h3>
+                            <div class="work-details-text">
+                                <p>
+                                    1人プレイ専用のPCゲームです。左右2つのブロックをキーボードで両手それぞれ別々に操作し、飛んでくる障害物を避けます。左右両方のブロックを意識し操作するという難しさを味わうことができます。
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="work-sub-image">
+                    <ul>
+                        <li>
+                            <img src="<%= mix('/assets/images/Gemini_01.png') %>">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Gemini_02.png') %>">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Gemini_03.png') %>">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Gemini_04.png') %>">
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-PR-text">
+                    <p>
+                        この作品は、今までのゲーム制作の中でも特に情報設計にこだわり、誰でもわかりやすく、ゲームの難易度以外の部分でのストレスが無いゲームを意識して制作しました。<br>
+                        左右のブロックをそれぞれ3×3のグリット内で動かすという仕組みを実装するに当たって、スムーズな移動はもちろん、指をキーボードから離すとデフォルトの中央位置に戻るという、直感的な操作を意識した設計をしております。<br>
+                        ゲーム内のUIや操作説明もシンプルで分かりやすいものを意識し、ユーザーが迷うことなくゲームを楽しめることを重視した制作をしました。
+                    </p>
+                </div>
+                <div class="work-end">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+                <div class="otherworks">
+                    <h2>OTHER WORKS</h2>
+                    <div class="nav-to-other">
+                        <a id="previous" href="<%= mix('./eclipse.html') %>">PREVIOUS</a>
+                        <div id="vertical-line"></div>
+                        <a id="next" href="<%= mix('./triSketch.html') %>">NEXT</a>
+                    </div>
+                </div>
+            </div>
+            <%- include('/partials/scroll-top') -%> 
+        </div>
+    </section>
+</div>
+
+<%- include('/partials/footer') -%>

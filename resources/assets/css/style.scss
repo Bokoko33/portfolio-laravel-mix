@@ -10,6 +10,8 @@ $pc: 1024px; // PC
 $tab: 680px; // タブレット
 $sp: 480px;  // スマホ
 
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Prata&display=swap');
+
 @mixin pc {
   @media (min-width: ($pc)) {
     @content;
@@ -157,7 +159,7 @@ ul{
     letter-spacing: 1.1px;
 }
 h1,h2,h3{
-    font-family: 'Lato';
+    font-family: 'Lato',sans-serif;
 }
 h1{
     letter-spacing: 2.2px;
@@ -171,7 +173,7 @@ h1{
         ul{
             li{
                 font-size: 16px;
-                font-family: 'Lato';
+                font-family: 'Lato',sans-serif;
                 font-weight: 300;
                 margin: 15px 0;
                 display: flex;
@@ -211,7 +213,7 @@ h1{
             text-align: center;
             li{
                 font-size: 28px;
-                font-family: 'Lato';
+                font-family: 'Lato',sans-serif;
                 font-weight: 300;
                 margin: 50px 0;
             }
@@ -428,6 +430,7 @@ h1{
         @include pc{
             padding: 3vw 0;
             ul{
+                padding: 0;
                 margin-bottom: 30px;
                 li{
                     
@@ -437,7 +440,7 @@ h1{
                         width: 6vw;
                     }
                     p{
-                        font-family: 'Lato';
+                        font-family: 'Lato',sans-serif;
                         font-weight: 200;
                         margin: auto 1.2vw;
                     }
@@ -463,7 +466,7 @@ h1{
                         height: 100%;
                     }
                     p{
-                        font-family: 'Lato';
+                        font-family: 'Lato',sans-serif;
                         font-weight: 200;
                         margin-left:24vw;
                     }
@@ -484,6 +487,7 @@ h1{
     }
     .work-sub-image{
         ul{
+            padding: 0;
             @include sp{
                 margin: 20px auto;
             }
@@ -519,7 +523,7 @@ h1{
 }
 .visit-link{
     text-align: right;
-    font-family: 'Lato';
+    font-family: 'Lato',sans-serif;
     font-weight: 200;
     @include pc{
         margin-right:5vw ;
@@ -599,7 +603,7 @@ h1{
                 margin: 50px 0;
                 display: inline-block;
                 font-size: 20px;
-                font-family: 'Lato';
+                font-family: 'Lato',sans-serif;
                 font-weight: 200;
                 // text-align: center;
             }
@@ -683,7 +687,7 @@ h1{
                 margin: 20px;
                 display: inline-block;
                 font-size: 16px;
-                font-family: 'Lato';
+                font-family: 'Lato',sans-serif;
                 font-weight: 200;
                 // text-align: center;
             }
@@ -731,7 +735,7 @@ h1{
     left: 0;
     right: 0;
     margin: auto;
-    font-family: 'Lato';
+    font-family: 'Lato',sans-serif;
     @include pc{
         width: 70vw;
     }
@@ -784,7 +788,7 @@ h1{
             right: 0;
             left: 0;
             display: block;
-            font-family: 'Lato';
+            font-family: 'Lato',sans-serif;
             li{
                 margin: 60px auto;
                 width: 100%;

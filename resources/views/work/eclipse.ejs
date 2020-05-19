@@ -1,0 +1,83 @@
+<%
+var title = 'Portfolio'
+%>
+
+<%- include('/partials/header', { title }) -%>
+
+<%- include('/partials/menu') -%>
+
+<div class="js-traget">
+    <section id="barba-wrapper" aria-live="polite">
+        <div class="barba-container">
+
+            <%- include('/partials/back-button') -%> 
+
+            <div class="work-details-wrapper">
+                <h1>eclipse</h1>
+                <h2>music</h2>
+                <div class="work-top-image">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/m_Rc--zjbwA" frameborder="0"
+                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="work-summary">
+                    <ul>
+                        <li>
+                            <h3>Role</h3>
+                            <p>solo</p>
+                        </li>
+                        <li>
+                            <h3>Term</h3>
+                            <p>1 month</p>
+                        </li>
+                        <li>
+                            <h3>Skills</h3>
+                            <p>DTM / Processing / Adobe After Effects</p>
+                        </li>
+                        <li>
+                            <h3>Outline</h3>
+                            <div class="work-details-text">
+                                <p>
+                                    大学で毎年行われる「卓展」という展示イベントに向けて、3年次に制作した音楽作品です。私が好きなArtcoreと呼ばれるジャンルのゲーム音楽を制作しました。<br>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="work-sub-image">
+                    <ul>
+                        <li>
+                            <img src="<%= mix('/assets/images/eclipse_01.png') %> ">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/eclipse_02.png') %> ">
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-PR-text">
+                    <p>
+                        卓展に映像付きの音楽作品を展示したのは3回目で、今回はあまり映像に力を入れることができませんでしたが、楽曲自体は今までの中でも一番気に入っています。<br>
+                        今までの音楽制作が好きな要素の詰め合わせで聴きづらかったこともあり、それを反省して今回は曲のコンセプトやジャンルを明確にし、まとまりを意識しました。自分が好きな既存の曲から構成や技法を参考することはもちろん、全体の流れに抑揚を付けつつも統一感のある曲を目指し、世界観を持って制作しました。<br>
+                        今回はArtcoreということで、ピアノをメインの音色とし、スピード感があり美しくも儚い印象の楽曲を表現しました。
+                    </p>
+                </div>
+                <div class="work-end">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+                <div class="otherworks">
+                    <h2>OTHER WORKS</h2>
+                    <div class="nav-to-other">
+                        <a id="previous" href="<%= mix('./nomnomSketch.html') %> ">PREVIOUS</a>
+                        <div id="vertical-line"></div>
+                        <a id="next" href="<%= mix('./gemini.html') %> ">NEXT</a>
+                    </div>
+                </div>
+            </div>
+            <%- include('/partials/scroll-top') -%> 
+        </div>
+    </section>
+</div>
+
+<%- include('/partials/footer') -%>

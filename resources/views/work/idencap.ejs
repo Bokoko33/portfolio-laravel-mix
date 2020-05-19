@@ -1,0 +1,87 @@
+<%
+var title = 'Portfolio'
+%>
+
+<%- include('/partials/header', { title }) -%>
+
+<%- include('/partials/menu') -%>
+
+<div class="js-traget">
+    <section id="barba-wrapper" aria-live="polite">
+        <div class="barba-container">
+
+            <%- include('/partials/back-button') -%> 
+
+            <div class="work-details-wrapper">
+                <h1>第五人キャプ</h1>
+                <h2>game</h2>
+                <div class="work-top-image">
+                    <img src="<%= mix('/assets/images/Idencap_01.png') %> ">
+                </div>
+                <div class="work-summary">
+                    <ul>
+                        <li>
+                            <h3>Role</h3>
+                            <p>system / animation</p>
+                        </li>
+                        <li>
+                            <h3>Term</h3>
+                            <p>2 month</p>
+                        </li>
+                        <li>
+                            <h3>Skills</h3>
+                            <p>Unity / Motion Capture</p>
+                        </li>
+                        <li>
+                            <h3>Outline</h3>
+                            <div class="work-details-text">
+                                <p>
+                                    大学の授業でモーションキャプチャーに触れる機会があり、制作したアニメーションデータを用いて大人気オンラインゲームIdentityV（第五人格）のパロディ作品を作りました。私を含め3人でのチーム制作となっています。
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="work-sub-image">
+                    <ul>
+                        <li>
+                            <img src="<%= mix('/assets/images/Idencap_02.png') %> ">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Idencap_03.png') %> ">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Idencap_04.png') %> ">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/Idencap_05.png') %> ">
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-PR-text">
+                    <p>
+                        チームを組んだ2人と相談し、アウトプットの手段としてオリジナルの制作も検討しましたが、自由度の高い実習だったため、息抜きのような気持ちで当時3人がハマっていたゲームのパロディを制作することにしました。<br>
+                        全19種類のモーションを撮影し、それぞれ修正しゲーム内のアニメーションとして利用しました。撮影やモーションデータの編集は3人で行い、ゲームとして応用する段階を分業しました。私は主にキャラクター同士の作用やアニメーション遷移を担当し、いかに本家に近い挙動を再現できるかを模索しました。
+                    </p>
+                </div>
+                <div class="work-end">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+                <div class="otherworks">
+                    <h2>OTHER WORKS</h2>
+                    <div class="nav-to-other">
+                        <a id="previous" href="<%= mix('./brouch.html') %>">PREVIOUS</a>
+                        <div id="vertical-line"></div>
+                        <a id="next" href="<%= mix('./d_station.html') %>">NEXT</a>
+                    </div>
+                </div>
+            </div>
+            <%- include('/partials/scroll-top') -%> 
+        </div>
+    </section>
+</div>
+
+<%- include('/partials/footer') -%>

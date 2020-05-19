@@ -1,0 +1,84 @@
+<%
+var title = 'Portfolio'
+%>
+
+<%- include('/partials/header', { title }) -%>
+
+<%- include('/partials/menu') -%>
+
+<div class="js-traget">
+    <section id="barba-wrapper" aria-live="polite">
+        <div class="barba-container">
+
+            <%- include('/partials/back-button') -%> 
+
+            <div class="work-details-wrapper">
+                <h1>TriSketch</h1>
+                <h2>installation</h2>
+                <div class="work-top-image">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/b0WnUiJRsuI" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="work-summary">
+                    <ul>
+                        <li>
+                            <h3>Role</h3>
+                            <p>visual</p>
+                        </li>
+                        <li>
+                            <h3>Term</h3>
+                            <p>2 weeks</p>
+                        </li>
+                        <li>
+                            <h3>Skills</h3>
+                            <p>Processing</p>
+                        </li>
+                        <li>
+                            <h3>Outline</h3>
+                            <div class="work-details-text">
+                                <p>
+                                    2年次の学園祭で展示した参加型インスタレーションです。私を含め部署内の希望者が各々ビジュアル表現を制作し、インタラクションの部分を部署の先輩にまとめて担当していただく形での制作でした。<br>
+                                    ステッキ状のガジェットを用いて3種類の描画が楽しめる作品となっています。
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="work-sub-image">
+                    <ul>
+                        <li>
+                            <img src="<%= mix('/assets/images/triSketch_01.png') %> ">
+                        </li>
+                        <li>
+                            <img src="<%= mix('/assets/images/triSketch_02.png') %> ">
+                        </li>
+                    </ul>
+                </div>
+                <div class="work-PR-text">
+                    <p>
+                        ステッキ状のガジェットがRGBそれぞれの光を発し、スクリーン側に設置されたwebカメラを用いて位置や色を画像処理で認識し、3つそれぞれの描画パターンを制御しています。<br>
+                        私はProcessingを用いたビジュアル部分の制作のみの担当でしたが、自分の作ったものを大きなスクリーン上でいろいろな人に楽しんでもらうという初めての経験となりました。この制作がきっかけでさらに多くの人に自分の作品に触れてもらいたい、さらに多くの人を楽しませたいという気持ちが強まりました。
+                    </p>
+                </div>
+                <div class="work-end">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+                <div class="otherworks">
+                    <h2>OTHER WORKS</h2>
+                    <div class="nav-to-other">
+                        <a id="previous" href="<%= mix('./gemini.html') %> ">PREVIOUS</a>
+                        <div id="vertical-line"></div>
+                        <a id="next" href="<%= mix('./idencap.html') %> ">NEXT</a>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('/partials/scroll-top') -%> 
+        </div>
+    </section>
+</div>
+
+<%- include('/partials/footer') -%>
