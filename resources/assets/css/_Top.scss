@@ -1,0 +1,20 @@
+//トップページ
+#title{
+    position: absolute;
+    @include pc{
+        top: 44vh;
+        left: 18vw;
+        width: 320px;
+    }
+    @include sp{
+        top: 42vh;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 300px;
+        
+    }
+    img{
+        width: 100%;
+    }
+}

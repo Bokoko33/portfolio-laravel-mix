@@ -1,0 +1,96 @@
+header{
+    z-index: 10;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    @include pc{
+        height: 100px;
+        background-color: rgba($color: #fff, $alpha: 0);
+    }
+    @include sp{
+        height: 65px;
+        background-color:rgb(250,250,250);
+    }
+    #logo-icon{
+        position: fixed;
+        @include pc{
+            top: 17px;
+            left: 3.3vw;
+            width: 46px;
+        }
+        @include sp{
+            top: 15px;
+            left: 8vw;
+            width: 26px;
+        }
+    
+        img{
+            width: 100%;
+        }
+    }
+    .hamburger-icon{
+        @include pc{
+            display: none;
+        }
+        @include sp{
+            float: right;
+            position: relative;
+            top: 10px;
+            right: 6vw;
+            width: 50px;
+            height: 50px;
+            background-color:rgb(250,250,250);
+            text-align: center;
+            padding: 5px;
+
+            span{
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                position: absolute;
+                transition: all 0.3s;
+                width: 42px;
+                height: 1px;
+                background:$soft-black;
+                display: block;
+            }
+            .first{
+                transform: translateY(-12px) scale(1);
+            }
+            .second{
+                background: none;
+                &:before, &:after {
+                    transition: all 0.3s;
+                    content: "";
+                    width: 42px;
+                    height: 1px;
+                    background:$soft-black;
+                    display: block;
+                    transform: rotate(0deg);
+                    position: absolute;
+                }
+            }
+            .third {
+                transform: translateY(12px) scale(1);
+            }
+        }
+    }
+    .is-open {
+        @include sp{
+            .first {
+                transform: translateY(0px) scale(0);
+              }
+              .third {
+                transform: translateY(0px) scale(0);
+              }
+              .second {
+                &:before {
+                  transform: rotate(45deg);
+                }
+                &:after {
+                  transform: rotate(-45deg);
+                }
+              }
+        }
+    }
+}
