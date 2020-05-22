@@ -10,32 +10,20 @@
 
   <!-- googlefonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Prata&display=swap" rel="stylesheet">
-
-  <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-</script>
   
   <title><%= title %></title>
 </head>
 
 <body>
-  <% /*
-  In development, if SVG is included in EJS,
-  injection of changes such as CSS by BrowserSync is prevented
-  Because svg-spritemap-webpack-plugin reacts for all changes,
-  and it causes EJS recompile and browser reloading
-  */ %>
-  <% if (process.env.NODE_ENV === 'production') { %>
-    <%- include('/../../public/assets/svg/sprite.svg') -%>
-  <% } %>
-
   <header>
     <div id="logo-icon">
-        <a id="I" href="">
+        <a id="I" href="<%= mix('/') %> ">
             <img src="<%= mix('/assets/images/logo.png')%>">
         </a>
     </div>
+    <div class="hamburger-icon">
+      <span class="first"></span>
+      <span class="second"></span>
+      <span class="third"></span>
+  </div>
   </header>

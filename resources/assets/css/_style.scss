@@ -28,6 +28,10 @@ $sp: 480px;  // スマホ
   }
 }
 
+body{
+    margin: 0;
+}
+
 
 
 #background{
@@ -39,9 +43,9 @@ $sp: 480px;  // スマホ
     background-color: rgb(250,250,250);
     z-index: -100;
 }
-// .contents{
-//     // display: none;
-// }
+.contents{
+    display: none;
+}
 
 #defaultCanvas0{
     z-index: -20;

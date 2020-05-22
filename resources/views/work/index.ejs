@@ -6,136 +6,129 @@ var title = 'Portfolio'
 
 <%- include('/partials/menu') -%>
 
-<div class="js-target">
-    <section id="barba-wrapper" aria-live="polite">
-        <div class="barba-container">
-            <div class="work-wrapper">
-                <!-- アンカー用 -->
-                <div class="page-head">
-                    <img src="<%= mix('/assets/images/work.png') %>">
-                </div>
-                <ul>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./portfolio_01.html')  %> ">
-                                <img src="<%= mix('/assets/images/portfolio01_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>Portfolio</h1>
-                                    <h2>website</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./nomnomSketch.html')  %> ">
-                                <img src="<%= mix('/assets/images/nomnomSketch_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>nomnomSketch</h1>
-                                    <h2>installation</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./eclipse.html')  %> ">
-                                <img src="<%= mix('/assets/images/eclipse_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>eclipse</h1>
-                                    <h2>music</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./gemini.html')  %> ">
-                                <img src="<%= mix('/assets/images/gemini_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>Gemini</h1>
-                                    <h2>game</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./triSketch.html')  %> ">
-                                <img src="<%= mix('/assets/images/triSketch_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>TriSketch</h1>
-                                    <h2>installation</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./atsumaru.html')  %> ">
-                                <img src="<%= mix('/assets/images/atsumaru_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>ATSUMARU</h1>
-                                    <h2>simulation art</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./brouch.html')  %> ">
-                                <img src="<%= mix('/assets/images/brouch_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>Brouch</h1>
-                                    <h2>art</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./idencap.html')  %> ">
-                                <img src="<%= mix('/assets/images/idencap_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>第五人キャプ</h1>
-                                    <h2>game</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./d_station.html')  %> ">
-                                <img src="<%= mix('/assets/images/d_station_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>D_station</h1>
-                                    <h2>movie</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="work-thumb">
-                            <a href="<%= mix('./meimei.html')  %> ">
-                                <img src="<%= mix('/assets/images/meimei_01.png') %>">
-                                <div class="hover-mask">
-                                    <h1>命々</h1>
-                                    <h2>movie</h2>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+<%- include('/partials/p5-canvas') -%>
+<section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
+        <div class="work-wrapper">
+            <!-- アンカー用 -->
+            <div class="page-head">
+                <img src="<%= mix('/assets/images/work.png') %>">
             </div>
-            
+            <ul>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./portfolio_01.html')  %> ">
+                            <img src="<%= mix('/assets/images/portfolio01_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>Portfolio</h1>
+                                <h2>website</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./nomnomSketch.html')  %> ">
+                            <img src="<%= mix('/assets/images/nomnomSketch_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>nomnomSketch</h1>
+                                <h2>installation</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./eclipse.html')  %> ">
+                            <img src="<%= mix('/assets/images/eclipse_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>eclipse</h1>
+                                <h2>music</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./gemini.html')  %> ">
+                            <img src="<%= mix('/assets/images/gemini_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>Gemini</h1>
+                                <h2>game</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./triSketch.html')  %> ">
+                            <img src="<%= mix('/assets/images/triSketch_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>TriSketch</h1>
+                                <h2>installation</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./atsumaru.html')  %> ">
+                            <img src="<%= mix('/assets/images/atsumaru_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>ATSUMARU</h1>
+                                <h2>simulation art</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./brouch.html')  %> ">
+                            <img src="<%= mix('/assets/images/brouch_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>Brouch</h1>
+                                <h2>art</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./idencap.html')  %> ">
+                            <img src="<%= mix('/assets/images/idencap_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>第五人キャプ</h1>
+                                <h2>game</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./d_station.html')  %> ">
+                            <img src="<%= mix('/assets/images/d_station_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>D_station</h1>
+                                <h2>movie</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-thumb">
+                        <a href="<%= mix('./meimei.html')  %> ">
+                            <img src="<%= mix('/assets/images/meimei_01.png') %>">
+                            <div class="hover-mask">
+                                <h1>命々</h1>
+                                <h2>movie</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </section>
-    <!-- この位置で読み込むのが良さげ -->
-    <div id="scroll-top">
-    <a href="#">
-        <img src="<%= mix('../assets/images/scroll_top.png')%>"/>
-    </a>
+        <%- include('/partials/scroll-top') -%> 
     </div>
-</div>
+</section>
 
 <%- include('/partials/footer') -%>

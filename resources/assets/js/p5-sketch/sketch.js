@@ -1,5 +1,4 @@
 import p5 from 'p5'
-import 'node_modules/p5/lib/p5.min.js'
 import FloatParticle from './FloatParticle'
 import DrawParticle from './DrawParticle'
 
@@ -25,42 +24,32 @@ var in_works = false; //ワークページかどうか
 var in_about = false; //about..
 var lineNum = 2; //一つに対して何個近くのやつと繋げるか
 
-// var all_clear = false; //全てのfpが除外された
-
-
-var bgImage;
-// var clickCount = 0;
-
-
 
 export function sketch (p5){
     function drawInit(){
-        angle = Math.TWO_PI / vertexNum;
+        angle = p5.TWO_PI / vertexNum;
         for(var i=0;i<vertexNum;i++){
             var fvel = new p5.createVector(1,0);
             fvel.rotate(angle*i);
             fvel.mult(0.12);
     
-            var _dp = new DrawParticle(fvel.x,fvel.y);
+            var _dp = new DrawParticle(p5,fvel.x,fvel.y);
             dp.push(_dp);
         }
-        // fill(255,10);
-        // noStroke();
-        // rect(0, 0, p5.windowWidth, p5.windowHeight);
     }
     
     function floatInit(){
         for(var i=0;i<fpNum;i++){
-            var _fp = new FloatParticle();
+            var _fp = new FloatParticle(p5);
             fp.push(_fp);
         }
     }
     p5.windowResized = () =>{
-        resizeCanvas(p5.windowWidth, p5.windowHeight);
+        p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
         p5.background(250,250,250);
     }
     p5.setup = () =>{
-        canvas = createCanvas(p5.windowWidth,p5.windowHeight);
+        canvas = p5.createCanvas(p5.windowWidth,p5.windowHeight);
         canvas.parent('p5canvas');
         p5.background(250,250,250);
         centerX = p5.width/2;
@@ -69,12 +58,26 @@ export function sketch (p5){
     }
 
     p5.draw = () =>{
+        //ページごとに表示非表示の処理
+        var url = location.href;
+        if(url.indexOf('work') != -1){
+            in_works = true;
+        }
+        else{
+            in_works = false;
+        }
+        if(url.indexOf('about') != -1){
+            in_about = true;
+        }
+        else{
+            in_about = false;
+        }
         //workに行く時に散る
         $('.menu #work,.menu #about,.menu #contact').on('click',function(){
             for(var i=0;i<fp.length;i++){
                 var centerVec = p5.createVector(p5.width/2,p5.height/2);
-                var newVel = p5.Vector.sub(fp[i].pos,centerVec);
-                // var newVel = p5.createVector(Math.random(-1,1),Math.random(-1,1));
+                var newVel = p5.Vector.p5.sub(fp[i].pos,centerVec);
+                
                 newVel.normalize();
                 newVel.mult(100);
                 fp[i].vel.set(newVel.x,newVel.y);
@@ -83,8 +86,8 @@ export function sketch (p5){
         //topに行く時再生成
         $('#I,.menu #top').on('click',function(){
             for(var i=0;i<fp.length;i++){
-                fp[i].pos = p5.createVector(Math.random(p5.width),Math.random(p5.height));
-                fp[i].vel = p5.createVector(Math.random(-1,1),Math.random(-1,1));
+                fp[i].pos = p5.createVector(p5.random(p5.width),p5.random(p5.height));
+                fp[i].vel = p5.createVector(p5.random(-1,1),p5.random(-1,1));
                 fp[i].vel.normalize();
                 fp[i].vel.mult(100);
             }
@@ -97,7 +100,7 @@ export function sketch (p5){
         }
         else{
             
-            var a = dist(centerX,p5.height/2,p5.mouseX,p5.mouseY);
+            var a = p5.dist(centerX,p5.height/2,p5.mouseX,p5.mouseY);
             if(a>150) a = 18;
             else a = 0;
             p5.background(250,a);
@@ -105,33 +108,35 @@ export function sketch (p5){
         }
 
         //漂流物
-        var clearFlag = true;
-        for(var i=0;i<fp.length;i++){
-            fp[i].update();
-            fp[i].draw();
-        
-
-            //近いやつをつなぐ
-            p5.stroke(0,20);
-            p5.noFill();
-            var lastDist = 0; //前回決定した距離を保管
-            for(var j=0;j<lineNum;j++){
-                var minId = 0;
-                var minDist = 9999;
-                for(var k=0;k<fp.length;k++){
-                    var len = p5.Vector.dist(fp[i].pos,fp[k].pos);
-                    if(j!=k && len<minDist && len>lastDist){
-                        minDist = len;
-                        minId = k;
+        if(!in_works && !in_about){
+            for(var i=0;i<fp.length;i++){
+                fp[i].update();
+                fp[i].draw();
+            
+    
+                //近いやつをつなぐ
+                p5.stroke(0,20);
+                p5.noFill();
+                var lastDist = 0; //前回決定した距離を保管
+                for(var j=0;j<lineNum;j++){
+                    var minId = 0;
+                    var minDist = 9999;
+                    for(var k=0;k<fp.length;k++){
+                        var len = p5.dist(fp[i].pos.x,fp[i].pos.y,fp[k].pos.x,fp[k].pos.y);
+                        if(j!=k && len<minDist && len>lastDist){
+                            minDist = len;
+                            minId = k;
+                        }
                     }
+                    lastDist = minDist;
+                    p5.line(fp[i].pos.x,fp[i].pos.y,fp[minId].pos.x,fp[minId].pos.y);   
                 }
-                lastDist = minDist;
-                line(fp[i].pos.x,fp[i].pos.y,fp[minId].pos.x,fp[minId].pos.y);   
             }
         }
+        
 
         //メインビジュアル
-        if(in_works) stroke(250,40);
+        if(in_works) p5.stroke(250,40);
         else p5.stroke(0,40);
         p5.strokeWeight(0.5);
         p5.noFill();
@@ -142,8 +147,8 @@ export function sketch (p5){
         
         // 反転回数分描画
         if(p5.windowWidth>480){
-            push();
-            translate(centerX,p5.height/2);
+            p5.push();
+            p5.translate(centerX,p5.height/2);
             for(var i=0;i<invertNum;i++){
 
                 p5.beginShape();
@@ -167,15 +172,15 @@ export function sketch (p5){
                         p5.curveVertex(dp[b].afterPosX[a], dp[b].afterPosY[a]);
                     }
                     p5.curveVertex(dp[0].afterPosX[a], dp[0].afterPosY[a]);
-                    p5.p5.curveVertex(dp[1].afterPosX[a], dp[1].afterPosY[a]);
+                    p5.curveVertex(dp[1].afterPosX[a], dp[1].afterPosY[a]);
 
                     p5.endShape();
                 }
 
-                rotate(2*Math.PI / invertNum);
+                p5.rotate(2*p5.PI / invertNum);
             }
 
-            pop();
+            p5.pop();
         }
         
 
@@ -184,20 +189,6 @@ export function sketch (p5){
         //横にずらす
         if(count>160){
             centerX += (2.8*p5.windowWidth/4 - centerX)*0.05;
-        }
-        //ページごとに表示非表示の処理
-        var url = location.href;
-        if(url.indexOf('work') != -1){
-            in_works = true;
-        }
-        else{
-            in_works = false;
-        }
-        if(url.indexOf('about') != -1){
-            in_about = true;
-        }
-        else{
-            in_about = false;
         }
 
         //コンテンツ表示

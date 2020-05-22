@@ -2,12 +2,15 @@
 var title = 'Portfolio'
 %>
 
-<%- include('/partials/header', { title }) -%>
-<%- include('/partials/menu') -%>
+<%- include('/partials/p5-canvas') -%>
 
-<div class="p5Canvas"></div>
+<div class="contents">
+  <%- include('/partials/header', { title }) -%>
 
-<div class="js-target">
+  <%- include('/partials/menu') -%>
+
+  
+
   <section id="barba-wrapper" aria-live="polite">
     <div class="barba-container">
         <div id="title">
@@ -15,7 +18,8 @@ var title = 'Portfolio'
         </div>
     </div>
   </section>
-  
+
+  <%- include('/partials/footer') -%>
 </div>
 
-<%- include('/partials/footer') -%>
+

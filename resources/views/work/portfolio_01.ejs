@@ -6,90 +6,89 @@ var title = 'Portfolio'
 
 <%- include('/partials/menu') -%>
 
-<div class="js-traget">
-    <section id="barba-wrapper" aria-live="polite">
-        <div class="barba-container">
+<%- include('/partials/p5-canvas') -%>
+<section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
 
-            <%- include('/partials/back-button') -%> 
+        <%- include('/partials/back-button') -%> 
 
-            <div class="work-details-wrapper">
-                <h1>Portfolio</h1>
-                <h2>website</h2>
-                <div class="work-top-image">
-                    <img src="<%= mix('/assets/images/portfolio01_01.png') %> ">
-                </div>
-                <div class="work-summary">
-                    <ul>
-                        <li>
-                            <h3>Role</h3>
-                            <p>solo</p>
-                        </li>
-                        <li>
-                            <h3>Term</h3>
-                            <p>1 month</p>
-                        </li>
-                        <li>
-                            <h3>Skills</h3>
-                            <p>HTML / SCSS / p5.js / Barba.js / illustrator</p>
-                        </li>
-                        <li>
-                            <h3>Outline</h3>
-                            <div class="work-details-text">
-                                <p>就職活動に向けて制作した私のポートフォリオ第一号です。3年次の夏休みに2週間ほどで制作し、その後作品の更新
-                                    やブラッシュアップなどを行いました。<br>
-                                    p5.jsを用いてメインビジュアルを作成し、インタラクションにこだわりました。デザインから実装まで、全て自分で行っています。
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="visit-link">
-                        <a href="https://bokoko33.github.io/portfolio/html/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-                <div class="work-sub-image">
-                    <ul>
-                        <li>
-                            <img src="<%= mix('/assets/images/portfolio01_02.png') %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/portfolio01_03.png') %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/portfolio01_04.png') %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/portfolio01_05.png') %> ">
-                        </li>
-                    </ul>
-                </div>
-                <div class="work-PR-text">
-                    <p>
-                        就職活動の際に企業の方にご覧いただくものとして、まずは自分に興味を持ってもらえるような第一印象が大切だと考え、メインビジュアルにこだわりました。
-                        僕がこれまでの制作で何度も利用し得意としてきたクリエイティブコーディングを用いて、訪問時のアニメーションと閲覧中のインタラクションを実装し、ただの作品集ではなく、このポートフォリオから自分の強みや好きなことを知ってもらえるようなサイト制作を意識しました。<br>
-                        本格的にwebサイトを制作したのは初めてでしたが、レスポンシブデザインにも挑戦し、凝ったビジュアルだけでなく使いやすさや分かりやすさにも配慮し制作しました。
-
-                    </p>
-                </div>
+        <div class="work-details-wrapper">
+            <h1>Portfolio</h1>
+            <h2>website</h2>
+            <div class="work-top-image">
+                <img src="<%= mix('/assets/images/portfolio01_01.png') %> ">
+            </div>
+            <div class="work-summary">
+                <ul>
+                    <li>
+                        <h3>Role</h3>
+                        <p>solo</p>
+                    </li>
+                    <li>
+                        <h3>Term</h3>
+                        <p>1 month</p>
+                    </li>
+                    <li>
+                        <h3>Skills</h3>
+                        <p>HTML / SCSS / p5.js / Barba.js / illustrator</p>
+                    </li>
+                    <li>
+                        <h3>Outline</h3>
+                        <div class="work-details-text">
+                            <p>就職活動に向けて制作した私のポートフォリオ第一号です。3年次の夏休みに2週間ほどで制作し、その後作品の更新
+                                やブラッシュアップなどを行いました。<br>
+                                p5.jsを用いてメインビジュアルを作成し、インタラクションにこだわりました。デザインから実装まで、全て自分で行っています。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
                 <div class="visit-link">
                     <a href="https://bokoko33.github.io/portfolio/html/" target="_blank">Visit Website</a>
                 </div>
-                <div class="work-end">
-                    <div class="point"></div>
-                    <div class="point"></div>
-                    <div class="point"></div>
-                </div>
-                <div class="otherworks">
-                    <h2>OTHER WORKS</h2>
-                    <div class="nav-to-other">
-                        <!-- <a id="previous"></a> -->
-                        <div id="vertical-line"></div>
-                        <a id="next" href="<%= mix('./nomnomSketch.html') %>">NEXT</a>
-                    </div>
+            </div>
+            <div class="work-sub-image">
+                <ul>
+                    <li>
+                        <img src="<%= mix('/assets/images/portfolio01_02.png') %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/portfolio01_03.png') %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/portfolio01_04.png') %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/portfolio01_05.png') %> ">
+                    </li>
+                </ul>
+            </div>
+            <div class="work-PR-text">
+                <p>
+                    就職活動の際に企業の方にご覧いただくものとして、まずは自分に興味を持ってもらえるような第一印象が大切だと考え、メインビジュアルにこだわりました。
+                    僕がこれまでの制作で何度も利用し得意としてきたクリエイティブコーディングを用いて、訪問時のアニメーションと閲覧中のインタラクションを実装し、ただの作品集ではなく、このポートフォリオから自分の強みや好きなことを知ってもらえるようなサイト制作を意識しました。<br>
+                    本格的にwebサイトを制作したのは初めてでしたが、レスポンシブデザインにも挑戦し、凝ったビジュアルだけでなく使いやすさや分かりやすさにも配慮し制作しました。
+
+                </p>
+            </div>
+            <div class="visit-link">
+                <a href="https://bokoko33.github.io/portfolio/html/" target="_blank">Visit Website</a>
+            </div>
+            <div class="work-end">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div class="otherworks">
+                <h2>OTHER WORKS</h2>
+                <div class="nav-to-other">
+                    <!-- <a id="previous"></a> -->
+                    <div id="vertical-line"></div>
+                    <a id="next" href="<%= mix('./nomnomSketch.html') %>">NEXT</a>
                 </div>
             </div>
-            <%- include('/partials/scroll-top') -%> 
         </div>
-    </section>
-</div>
+        <%- include('/partials/scroll-top') -%> 
+    </div>
+</section>
 
 <%- include('/partials/footer') -%>

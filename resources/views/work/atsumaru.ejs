@@ -6,83 +6,83 @@ var title = 'Portfolio'
 
 <%- include('/partials/menu') -%>
 
-<div class="js-traget">
-    <section id="barba-wrapper" aria-live="polite">
-        <div class="barba-container">
+<%- include('/partials/p5-canvas') -%>
 
-            <%- include('/partials/back-button') -%> 
-            
-            <div class="work-details-wrapper">
-                <h1>ATSUMARU</h1>
-                <h2>simulation art</h2>
-                <div class="work-top-image">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3qkwl0qwn7g" frameborder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="work-summary">
-                    <ul>
-                        <li>
-                            <h3>Role</h3>
-                            <p>solo</p>
-                        </li>
-                        <li>
-                            <h3>Term</h3>
-                            <p>2 month</p>
-                        </li>
-                        <li>
-                            <h3>Skills</h3>
-                            <p>Processing</p>
-                        </li>
-                        <li>
-                            <h3>Outline</h3>
-                            <div class="work-details-text">
-                                <p>
-                                    「集まる」がテーマの実習制作で、木を連想させる枝分かれと養分の吸収を表現したシミュレーションアートを制作しました。画面中心から徐々に枝が広がっていく様子、養分が枝を伝って中心に集まっていく様子の二つを同時に表現しています。
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                </div>
-                <div class="work-sub-image">
-                    <ul>
-                        <li>
-                            <img src="<%= mix('/assets/images/ATSUMARU_01.png')  %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/ATSUMARU_02.png')  %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/ATSUMARU_03.png')  %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/ATSUMARU_04.png')  %> ">
-                        </li>
-                    </ul>
-                </div>
-                <div class="work-PR-text">
-                    <p>
-                        大学2年の終わりに制作し、これまでの制作より一層複雑なアルゴリズム構築への挑戦となりました。ただ近くの点に枝を伸ばしていくのではなく、植物のモチーフを表現するため、中心からの角度を制限するなどして工夫をしています。また、養分が枝を伝う動きを表現するため、移動の仕方にも工夫を取り入れています。<br>
-                        さらに発展した内容として、集まる地点が中心だけでなく途中で増えたり減ったりする仕組みを実装しています。中心地が増えると総当たりのルート探索により目的地を再設定し、ただ一方向に集まるだけでなくそれぞれの養分が様々な地点を目指します。このような目的地の再設定により、まるで生き物のような養分たちの動きを表現しました。
-                    </p>
-                </div>
-                <div class="work-end">
-                    <div class="point"></div>
-                    <div class="point"></div>
-                    <div class="point"></div>
-                </div>
-                <div class="otherworks">
-                    <h2>OTHER WORKS</h2>
-                    <div class="nav-to-other">
-                        <a id="previous" href="<%= mix('../ idencap.html')  %>">PREVIOUS</a>
-                        <div id="vertical-line"></div>
-                        <a id="next" href="<%= mix('../brouch.html') %> ">NEXT</a>
-                    </div>
+<section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
+
+        <%- include('/partials/back-button') -%> 
+        
+        <div class="work-details-wrapper">
+            <h1>ATSUMARU</h1>
+            <h2>simulation art</h2>
+            <div class="work-top-image">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3qkwl0qwn7g" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="work-summary">
+                <ul>
+                    <li>
+                        <h3>Role</h3>
+                        <p>solo</p>
+                    </li>
+                    <li>
+                        <h3>Term</h3>
+                        <p>2 month</p>
+                    </li>
+                    <li>
+                        <h3>Skills</h3>
+                        <p>Processing</p>
+                    </li>
+                    <li>
+                        <h3>Outline</h3>
+                        <div class="work-details-text">
+                            <p>
+                                「集まる」がテーマの実習制作で、木を連想させる枝分かれと養分の吸収を表現したシミュレーションアートを制作しました。画面中心から徐々に枝が広がっていく様子、養分が枝を伝って中心に集まっていく様子の二つを同時に表現しています。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="work-sub-image">
+                <ul>
+                    <li>
+                        <img src="<%= mix('/assets/images/ATSUMARU_01.png')  %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/ATSUMARU_02.png')  %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/ATSUMARU_03.png')  %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/ATSUMARU_04.png')  %> ">
+                    </li>
+                </ul>
+            </div>
+            <div class="work-PR-text">
+                <p>
+                    大学2年の終わりに制作し、これまでの制作より一層複雑なアルゴリズム構築への挑戦となりました。ただ近くの点に枝を伸ばしていくのではなく、植物のモチーフを表現するため、中心からの角度を制限するなどして工夫をしています。また、養分が枝を伝う動きを表現するため、移動の仕方にも工夫を取り入れています。<br>
+                    さらに発展した内容として、集まる地点が中心だけでなく途中で増えたり減ったりする仕組みを実装しています。中心地が増えると総当たりのルート探索により目的地を再設定し、ただ一方向に集まるだけでなくそれぞれの養分が様々な地点を目指します。このような目的地の再設定により、まるで生き物のような養分たちの動きを表現しました。
+                </p>
+            </div>
+            <div class="work-end">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div class="otherworks">
+                <h2>OTHER WORKS</h2>
+                <div class="nav-to-other">
+                    <a id="previous" href="<%= mix('../ idencap.html')  %>">PREVIOUS</a>
+                    <div id="vertical-line"></div>
+                    <a id="next" href="<%= mix('../brouch.html') %> ">NEXT</a>
                 </div>
             </div>
-            <%- include('/partials/scroll-top') -%>
         </div>
-    </section>
-</div>
+        <%- include('/partials/scroll-top') -%>
+    </div>
+</section>
 
 <%- include('/partials/footer') -%>

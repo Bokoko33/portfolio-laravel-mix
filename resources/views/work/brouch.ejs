@@ -6,78 +6,78 @@ var title = 'Portfolio'
 
 <%- include('/partials/menu') -%>
 
-<div class="js-traget">
-    <section id="barba-wrapper" aria-live="polite">
-        <div class="barba-container">
+<%- include('/partials/p5-canvas') -%>
 
-            <%- include('/partials/back-button') -%> 
-            
-            <div class="work-details-wrapper">
-                <h1>Brouch</h1>
-                <h2>art</h2>
-                <div class="work-top-image">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cogeyxbSjyo" frameborder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="work-summary">
-                    <ul>
-                        <li>
-                            <h3>Role</h3>
-                            <p>solo</p>
-                        </li>
-                        <li>
-                            <h3>Term</h3>
-                            <p>2 month</p>
-                        </li>
-                        <li>
-                            <h3>Skills</h3>
-                            <p>DTM / Unity</p>
-                        </li>
-                        <li>
-                            <h3>Outline</h3>
-                            <div class="work-details-text">
-                                <p>
-                                    感性の動きを譜面に起こした「触譜」と呼ばれる手段を用いてアート作品を制作しました。触譜を用いて音楽を制作し、そのビジュアライズをUnityで行っています。触譜について詳しくは<a href="https://yumenavi.info/lecture_sp.aspx?GNKCD=g009898&OraSeq=93&ProId=WNA002&SerKbn=Z&SearchMod=6&Page=1&KeyWord=%E6%84%9F%E6%80%A7">こちら</a>（外部ページのリンクとなります）
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                </div>
-                <div class="work-sub-image">
-                    <ul>
-                        <li>
-                            <img src="<%= mix('/assets/images/Brouch_01.png') %> ">
-                        </li>
-                        <li>
-                            <img src="<%= mix('/assets/images/Brouch_02.png')  %> ">
-                        </li>
-                    </ul>
-                </div>
-                <div class="work-PR-text">
-                    <p>
-                        木の枝分かれにリズムを感じ、触譜に起こそうと試みました。限られた制作期間であったため、簡単ではありますが木の画像をトレースし、それぞれのパーツの太さや長さ、枝分かれの角度などを数値化しました。<br>
-                        定量化した木の枝分かれから触譜を作成し、DAW（PCで音楽を制作するソフト）上でその譜面通りにノーツを並べ音楽を制作し、さらにUntiyで視覚的な表現を加え、映像作品としました。<br>
-                        初めて「触譜」という概念を知り、実際に作品を作りながら学びましたが、様々な分野に応用できる考え方であり、作品制作おける視野がとても広がりました。
-                    </p>
-                </div>
-                <div class="work-end">
-                    <div class="point"></div>
-                    <div class="point"></div>
-                    <div class="point"></div>
-                </div>
-                <div class="otherworks">
-                    <h2>OTHER WORKS</h2>
-                    <div class="nav-to-other">
-                        <a id="previous" href="<%= mix('./atsumaru.html') %>">PREVIOUS</a>
-                        <div id="vertical-line"></div>
-                        <a id="next" href="<%= mix('./idencap.html') %> ">NEXT</a>
-                    </div>
+<section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
+
+        <%- include('/partials/back-button') -%> 
+        
+        <div class="work-details-wrapper">
+            <h1>Brouch</h1>
+            <h2>art</h2>
+            <div class="work-top-image">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cogeyxbSjyo" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="work-summary">
+                <ul>
+                    <li>
+                        <h3>Role</h3>
+                        <p>solo</p>
+                    </li>
+                    <li>
+                        <h3>Term</h3>
+                        <p>2 month</p>
+                    </li>
+                    <li>
+                        <h3>Skills</h3>
+                        <p>DTM / Unity</p>
+                    </li>
+                    <li>
+                        <h3>Outline</h3>
+                        <div class="work-details-text">
+                            <p>
+                                感性の動きを譜面に起こした「触譜」と呼ばれる手段を用いてアート作品を制作しました。触譜を用いて音楽を制作し、そのビジュアライズをUnityで行っています。触譜について詳しくは<a href="https://yumenavi.info/lecture_sp.aspx?GNKCD=g009898&OraSeq=93&ProId=WNA002&SerKbn=Z&SearchMod=6&Page=1&KeyWord=%E6%84%9F%E6%80%A7">こちら</a>（外部ページのリンクとなります）
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="work-sub-image">
+                <ul>
+                    <li>
+                        <img src="<%= mix('/assets/images/Brouch_01.png') %> ">
+                    </li>
+                    <li>
+                        <img src="<%= mix('/assets/images/Brouch_02.png')  %> ">
+                    </li>
+                </ul>
+            </div>
+            <div class="work-PR-text">
+                <p>
+                    木の枝分かれにリズムを感じ、触譜に起こそうと試みました。限られた制作期間であったため、簡単ではありますが木の画像をトレースし、それぞれのパーツの太さや長さ、枝分かれの角度などを数値化しました。<br>
+                    定量化した木の枝分かれから触譜を作成し、DAW（PCで音楽を制作するソフト）上でその譜面通りにノーツを並べ音楽を制作し、さらにUntiyで視覚的な表現を加え、映像作品としました。<br>
+                    初めて「触譜」という概念を知り、実際に作品を作りながら学びましたが、様々な分野に応用できる考え方であり、作品制作おける視野がとても広がりました。
+                </p>
+            </div>
+            <div class="work-end">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div class="otherworks">
+                <h2>OTHER WORKS</h2>
+                <div class="nav-to-other">
+                    <a id="previous" href="<%= mix('./atsumaru.html') %>">PREVIOUS</a>
+                    <div id="vertical-line"></div>
+                    <a id="next" href="<%= mix('./idencap.html') %> ">NEXT</a>
                 </div>
             </div>
-            <%- include('/partials/scroll-top') -%>
         </div>
-    </section>
-</div>
+        <%- include('/partials/scroll-top') -%>
+    </div>
+</section>
 
 <%- include('/partials/footer') -%>
