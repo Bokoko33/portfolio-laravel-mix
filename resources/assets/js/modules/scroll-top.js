@@ -3,7 +3,7 @@ import $ from 'jQuery';
 export function scrollTop(){
     
     if(screen.width>700){
-        var pagetop = $('#scroll-top');
+        var pagetop = $('.scroll-top');
         // 200px スクロールしたらボタン表示
         $(window).scroll(function () {
             if ($(this).scrollTop() > 200) {
