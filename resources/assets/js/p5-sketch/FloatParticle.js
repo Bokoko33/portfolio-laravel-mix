@@ -1,4 +1,5 @@
 import {in_works,in_about} from './sketch'
+import p5 from 'p5'
 
 export default class FloatParticle{
     constructor(_p5){
