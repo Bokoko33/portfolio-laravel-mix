@@ -1,0 +1,24 @@
+.work-details__back-button{
+    z-index: 4;
+    @include pc{
+        left: 3.2vw;
+        top: 140px;
+        width: 82px;
+        position: fixed;
+        img{
+            width: 100%;
+        }
+    }
+    @include sp{
+        background-color: rgb(250,250,250);
+        top: 64px;
+        width: 100vw;
+        height: 50px;
+        position: fixed;
+        img{
+            margin: 12px 20px;
+            width: 24%;
+        }
+    }
+    
+}
