@@ -1,3 +1,5 @@
+import $ from 'jQuery';
+
 export function smart_phone_menu(){
     $('.hamburger-icon').click(function(){
         if($('.hamburger-icon').hasClass('is-open')){
