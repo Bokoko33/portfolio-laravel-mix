@@ -5,43 +5,41 @@ import DrawParticle from './DrawParticle'
 import $ from 'jquery'
 
 //メインビジュアル関連
-var vertexNum = 9; //頂点数
-var invertNum = 3; //反転回数
-var dp = new Array();
-var angle ;
-var canvas;
-var count = 0;
-var centerX; //X座標の中心
-var endDraw = false;  //描画終了
-var posNum = 4; //残像の数（4がちょうど良いかなあ）
-var interval = 10; //残像の間隔（フレーム）
+const vertexNum = 9; //頂点数
+const invertNum = 3; //反転回数
+let dp = new Array();
+let angle ;
+let canvas;
+let count = 0;
+let centerX; //X座標の中心
+let endDraw = false;  //描画終了
+const posNum = 4; //残像の数（4がちょうど良いかなあ）
+const interval = 10; //残像の間隔（フレーム）
 
 
 //漂流物関連
-var fpNum = 30;
-var fp = new Array();
-var in_works = false; //ワークページかどうか
-var in_about = false; //about..
-var lineNum = 2; //一つに対して何個近くのやつと繋げるか
-
-var i,j,k; //forloop用
+const fpNum = 30;
+let fp = new Array();
+let in_works = false; //ワークページかどうか
+let in_about = false; //about..
+const lineNum = 2; //一つに対して何個近くのやつと繋げるか
 
 export function sketch (p5){
     function drawInit(){
         angle = p5.TWO_PI / vertexNum;
-        for(i=0;i<vertexNum;i++){
-            var fvel = new p5.createVector(1,0);
+        for(let i=0;i<vertexNum;i++){
+            let fvel = new p5.createVector(1,0);
             fvel.rotate(angle*i);
             fvel.mult(0.12);
     
-            var _dp = new DrawParticle(p5,fvel.x,fvel.y);
+            let _dp = new DrawParticle(p5,fvel.x,fvel.y);
             dp.push(_dp);
         }
     }
     
     function floatInit(){
-        for(i=0;i<fpNum;i++){
-            var _fp = new FloatParticle(p5);
+        for(let i=0;i<fpNum;i++){
+            let _fp = new FloatParticle(p5);
             fp.push(_fp);
         }
     }
@@ -60,7 +58,7 @@ export function sketch (p5){
 
     p5.draw = () =>{
         //ページごとに表示非表示の処理
-        var url = location.href;
+        let url = location.href;
         if(url.indexOf('work') != -1){
             in_works = true;
         }
@@ -75,9 +73,9 @@ export function sketch (p5){
         }
         //workに行く時に散る
         $('.menu #work,.menu #about,.menu #contact').on('click',function(){
-            for(i=0;i<fp.length;i++){
-                var centerVec = p5.createVector(p5.width/2,p5.height/2);
-                var newVel = p5.Vector.p5.sub(fp[i].pos,centerVec);
+            for(let i=0;i<fp.length;i++){
+                let centerVec = p5.createVector(p5.width/2,p5.height/2);
+                let newVel = p5.Vector.p5.sub(fp[i].pos,centerVec);
                 
                 newVel.normalize();
                 newVel.mult(100);
@@ -86,7 +84,7 @@ export function sketch (p5){
         });
         //topに行く時再生成
         $('#I,.menu #top').on('click',function(){
-            for(i=0;i<fp.length;i++){
+            for(let i=0;i<fp.length;i++){
                 fp[i].pos = p5.createVector(p5.random(p5.width),p5.random(p5.height));
                 fp[i].vel = p5.createVector(p5.random(-1,1),p5.random(-1,1));
                 fp[i].vel.normalize();
@@ -101,7 +99,7 @@ export function sketch (p5){
         }
         else{
             
-            var alph = p5.dist(centerX,p5.height/2,p5.mouseX,p5.mouseY);
+            let alph = p5.dist(centerX,p5.height/2,p5.mouseX,p5.mouseY);
             if(alph>150) alph = 18;
             else alph = 0;
             p5.background(250,alph);
@@ -110,7 +108,7 @@ export function sketch (p5){
 
         //漂流物
         if(!in_works && !in_about){
-            for(i=0;i<fp.length;i++){
+            for(let i=0;i<fp.length;i++){
                 fp[i].update();
                 fp[i].draw();
             
@@ -118,12 +116,12 @@ export function sketch (p5){
                 //近いやつをつなぐ
                 p5.stroke(0,20);
                 p5.noFill();
-                var lastDist = 0; //前回決定した距離を保管
-                for(j=0;j<lineNum;j++){
-                    var minId = 0;
-                    var minDist = 9999;
-                    for(k=0;k<fp.length;k++){
-                        var len = p5.dist(fp[i].pos.x,fp[i].pos.y,fp[k].pos.x,fp[k].pos.y);
+                let lastDist = 0; //前回決定した距離を保管
+                for(let j=0;j<lineNum;j++){
+                    let minId = 0;
+                    let minDist = 9999;
+                    for(let k=0;k<fp.length;k++){
+                        let len = p5.dist(fp[i].pos.x,fp[i].pos.y,fp[k].pos.x,fp[k].pos.y);
                         if(j!=k && len<minDist && len>lastDist){
                             minDist = len;
                             minId = k;
@@ -142,7 +140,7 @@ export function sketch (p5){
         p5.strokeWeight(0.5);
         p5.noFill();
 
-        for(i=0;i<dp.length;i++){
+        for(let i=0;i<dp.length;i++){
             dp[i].update();
         }
         
@@ -150,12 +148,12 @@ export function sketch (p5){
         if(p5.windowWidth>480){
             p5.push();
             p5.translate(centerX,p5.height/2);
-            for(i=0;i<invertNum;i++){
+            for(let i=0;i<invertNum;i++){
 
                 p5.beginShape();
 
                 p5.curveVertex(dp[dp.length-1].pos.x,dp[dp.length-1].pos.y);
-                for(k=0;k<dp.length;k++){
+                for(let k=0;k<dp.length;k++){
                     p5.curveVertex(dp[k].pos.x, dp[k].pos.y);
                 }
                 p5.curveVertex(dp[0].pos.x, dp[0].pos.y);
@@ -165,11 +163,11 @@ export function sketch (p5){
 
 
                 //残像分の処理
-                for(var a=0;a<posNum*interval;a+=interval){
+                for(let a=0;a<posNum*interval;a+=interval){
                     p5.beginShape();
 
                     p5.curveVertex(dp[dp.length-1].afterPosX[a],dp[dp.length-1].afterPosY[a]);
-                    for(var b=0;b<dp.length;b++){
+                    for(let b=0;b<dp.length;b++){
                         p5.curveVertex(dp[b].afterPosX[a], dp[b].afterPosY[a]);
                     }
                     p5.curveVertex(dp[0].afterPosX[a], dp[0].afterPosY[a]);

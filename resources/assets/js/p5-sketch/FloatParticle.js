@@ -25,8 +25,8 @@ export default class FloatParticle{
     update(){
         //カーソルが近づくと反発
         if(this.p.dist(this.p.mouseX,this.p.mouseY,this.pos.x,this.pos.y)<50){
-            var mouseVec = this.p.createVector(this.p.mouseX,this.p.mouseY);
-            var force = p5.Vector.sub(this.pos,mouseVec);
+            let mouseVec = this.p.createVector(this.p.mouseX,this.p.mouseY);
+            let force = p5.Vector.sub(this.pos,mouseVec);
             force.normalize();
             force.mult(2);
 
@@ -38,12 +38,12 @@ export default class FloatParticle{
         //topページでは画面外へ出たら反対側から出てくる
         if(!in_works &&  !in_about){
             if(this.pos.x < 0 || this.pos.x > this.p.width){
-                var x = this.p.width - this.pos.x;
+                let x = this.p.width - this.pos.x;
     
                 this.pos.set(x,this.pos.y);
             }
             if(this.pos.y < 0 || this.pos.y > this.p.height){
-                var y = this.p.height - this.pos.y;
+                let y = this.p.height - this.pos.y;
     
                 this.pos.set(this.pos.x,y);
             }
