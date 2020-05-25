@@ -80,27 +80,7 @@ h1{
 //------------------
 
 //ワークページ
-.page-head{
-    @include pc{
-        padding-top:  120px;
-        padding-bottom: 100px;
-        width: 100%;
-    }
-    @include sp{
-        padding-top:  100px;
-        padding-bottom: 70px;
-        width: 100%;
-    }
-    img{
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: 40px;
-        position: absolute;
-    }
-    
-    
-}
+
 
 
 
