@@ -1,5 +1,24 @@
 <%
 var title = 'Portfolio'
+
+var pageData = {
+    work_title : '命々',
+    category : 'movie',
+    top_image_type : 'iframe',
+    top_image : '<iframe width="560" height="315" src="https://www.youtube.com/embed/UUCMxV8Ftoo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    role : 'solo',
+    term : '2 month',
+    skills : 'Processing / DTM / Adobe Premiere Pro',
+    outline : '「生き物っぽさ」がテーマの実習課題で、Processingを用いて映像制作をしました。ただの点や線が姿を変えながら生き物のように振る舞う様子を表現しています。',
+    sub_image_path : ['meimei_01.png','meimei_02.png','meimei_03.png','meimei_04.png'],
+    sub_image_num:4,
+    work_PR_text : 'タイトルは二つの命の誕生から終わりを意味しています。「生き物っぽさ」を自分なりに解釈し、生き物ではないものが生き物のように動き一生を終える様子を表現しました。<br>1年次に触れて楽しみを見出したProcessingを使い、簡単な物理演算やフラクタルを用いてビジュアルを表現しています。初めての映像制作で音楽も自作し、ものづくりの楽しさや人に作品を見てもらうことの喜びなどを改めて実感する経験となりました。',
+    previous_work_path : './d_station.html',
+    next_work_path : '',
+    have_previous : true,
+    have_next: false
+}
+
 %>
 
 <%- include('/partials/header', { title }) -%>
@@ -13,74 +32,8 @@ var title = 'Portfolio'
 
         <%- include('/partials/back-button') -%> 
 
-        <div class="work-details-wrapper">
-            <h1>命々</h1>
-            <h2>movie</h2>
-            <div class="work-top-image">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/UUCMxV8Ftoo" frameborder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="work-summary">
-                <ul>
-                    <li>
-                        <h3>Role</h3>
-                        <p>solo</p>
-                    </li>
-                    <li>
-                        <h3>Term</h3>
-                        <p>2 month</p>
-                    </li>
-                    <li>
-                        <h3>Skills</h3>
-                        <p>Processing / DTM / Adobe Premiere Pro</p>
-                    </li>
-                    <li>
-                        <h3>Outline</h3>
-                        <div class="work-details-text">
-                            <p>
-                                「生き物っぽさ」がテーマの実習課題で、Processingを用いて映像制作をしました。ただの点や線が姿を変えながら生き物のように振る舞う様子を表現しています。
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-                
-            </div>
-            <div class="work-sub-image">
-                <ul>
-                    <li>
-                        <img src="<%= mix('/assets/images/meimei_02.png') %>">
-                    </li>
-                    <li>
-                        <img src="<%= mix('/assets/images/meimei_03.png') %>">
-                    </li>
-                    <li>
-                        <img src="<%= mix('/assets/images/meimei_04.png') %>">
-                    </li>
-                    <li>
-                        <img src="<%= mix('/assets/images/meimei_01.png') %>">
-                    </li>
-                </ul>
-            </div>
-            <div class="work-PR-text">
-                <p>
-                    タイトルは二つの命の誕生から終わりを意味しています。「生き物っぽさ」を自分なりに解釈し、生き物ではないものが生き物のように動き一生を終える様子を表現しました。<br>
-                    1年次に触れて楽しみを見出したProcessingを使い、簡単な物理演算やフラクタルを用いてビジュアルを表現しています。初めての映像制作で音楽も自作し、ものづくりの楽しさや人に作品を見てもらうことの喜びなどを改めて実感する経験となりました。
-                </p>
-            </div>
-            <div class="work-end">
-                <div class="point"></div>
-                <div class="point"></div>
-                <div class="point"></div>
-            </div>
-            <div class="otherworks">
-                <h2>OTHER WORKS</h2>
-                <div class="nav-to-other">
-                    <a id="previous" href="<%= mix('./d_station.html') %>">PREVIOUS</a>
-                    <div id="vertical-line"></div>
-                    <!-- <a id="next" href="nomnomSketch.html"></a> -->
-                </div>
-            </div>
-        </div>
+        <%- include('/partials/work-details-common',{data:pageData})  -%>
+
         <%- include('/partials/scroll-top') -%> 
     </div>
 </section>
