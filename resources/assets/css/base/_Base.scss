@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+}
+
+#defaultCanvas0{
+    z-index: -20;
+    top: 0;
+    position: fixed;
+    transition: 1.2s;
+}
+
+a{
+    color: $soft-black;
+    text-decoration: none;
+}
+p{
+    color: $soft-black;
+}
+ul{
+    list-style: none;
+}
+*{
+    letter-spacing: 1.1px;
+}
+h1,h2,h3{
+    font-family: $lato,sans-serif;
+}
+h1{
+    letter-spacing: 2.2px;
+}
+
