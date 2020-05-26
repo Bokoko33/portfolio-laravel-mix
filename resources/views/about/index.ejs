@@ -4,81 +4,72 @@ var title = 'Portfolio'
 <%- include('/partials/header', { title }) -%>
 <%- include('/partials/menu') -%>
 
-<div class="js-target">
-    <%- include('/partials/p5-canvas') -%>
-    <section id="barba-wrapper" aria-live="polite">
-        <div class="barba-container">
-            <!-- 半透明 -->
-            <div id="overlay"></div>
 
-            <!-- アンカー用 -->
-            <!-- <div id="about-top"></div> -->
+<%- include('/partials/p5-canvas') -%>
+<section id="barba-wrapper" aria-live="polite">
+    <div class="barba-container">
+        <!-- 半透明のマスク -->
+        <div id="about__overlay"></div>
 
-            <div class="about-wrapper">
-                <div class="page-head">
-                    <img src="<%= mix('/assets/images/about.png') %> ">
-                </div>
-                <div class="about-text">
-                    <h1>Profile</h1>
-                    <p>
-                        藤田　侑己（ふじた　ゆうき）<br>
-                        1998年4月2日生まれ<br>
-                        名古屋市立大学　芸術工学部　情報環境デザイン学科（2021年3月　卒業予定）<br>
-                        <br>
-                        面白いモノを考えたり作ったりすることが好きで、幅広くデジタルコンテンツを制作したいと思っています。ユーザーの体験を重視し、人をわくわくさせるもの、感動させるものを作るような仕事がしたいです。<br>
-                        <br>
-                        知識やスキルはどれも未熟ですが、新しいことに挑戦する意欲や初めて触れるものに対する吸収力、またクオリティや細部へのこだわりは持っています。<br>
-                    </p>
-                </div>
-                <div class="about-skills">
-                    <h1>Skills</h1>
-                    <p>
-                        HTML / SCSS / p5.js / Processing / Unity / Python / illustrator / DTM
-                    </p>
-                </div>
-                <div class="about-message">
-                    <p>
-                        "Identity"は私の一生の課題であると考えています。<br>
-                        周りから必要とされたい、という気持ちが強く、自分の存在価値はなんなのか、自分にしかできないことは何かを考えてしまうことが多いです。<br>
-                        <br>
-                        いろんなことに挑戦し幅広くこなせてきた反面、これなら誰にも負けない、という武器は何かと問われると弱いです。しかし、その多様な分野の制作経験はものづくりの中でいくらでも別の分野に応用でき、新しいアイデアに繋がると考えています。そしてそれが「自分にしかできないこと」に繋がればいいなと思っています。<br>
-
-                    </p>
-                </div>
-                <div class="page-head">
-                    <img src="<%= mix('/assets/images/contact.png')  %> ">
-                </div>
-                <div id="contact-top">
-                    <!-- <p>
-                        クリックするとメールが開きます。
-                    </p>
-                    <img id="arrow-down" src="../image/arrow_down.png">
-                    <br>
-                    <img id="email-button" src="../image/email_button.png"> -->
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf7C9jg35l7d4MdITpluPw3iV0qIOexoy_A0L9rNnEOdgmrlA/formResponse">
-                        <ul>
-                            <li>
-                                <p>Name</p>
-                                <input id="name" type="text" name="entry.1637071599" placeholder="" required>
-                            </li>
-                            <li>
-                                <p>Your Email</p>
-                                <input id="email" type="text" name="entry.356705499" placeholder="" required>
-                            </li>
-                            <li>
-                                <p>Message</p>
-                                <textarea id="msg" name="entry.1894791531" placeholder=""></textarea>
-                            </li>
-                        </ul>
-                        <p>*Google Formを埋め込んでいます。</p>
-                        <button type="submit" name="button" value="送信">Send</button>
-                    </form>
-                </div>
+        <div class="about">
+            <div class="about__head page-head">
+                <img src="<%= mix('/assets/images/about.png') %> ">
             </div>
-            <%- include('/partials/scroll-top') -%>
+            <div class="about__basic">
+                <h1>Profile</h1>
+                <p>
+                    藤田　侑己（ふじた　ゆうき）<br>
+                    1998年4月2日生まれ<br>
+                    名古屋市立大学　芸術工学部　情報環境デザイン学科（2021年3月　卒業予定）<br>
+                    <br>
+                    面白いモノを考えたり作ったりすることが好きで、幅広くデジタルコンテンツを制作したいと思っています。ユーザーの体験を重視し、人をわくわくさせるもの、感動させるものを作るような仕事がしたいです。<br>
+                    <br>
+                    知識やスキルはどれも未熟ですが、新しいことに挑戦する意欲や初めて触れるものに対する吸収力、またクオリティや細部へのこだわりは持っています。<br>
+                </p>
+            </div>
+            <div class="about__skills">
+                <h1>Skills</h1>
+                <p>
+                    HTML / SCSS / p5.js / Processing / Unity / Python / illustrator / DTM
+                </p>
+            </div>
+            <div class="about__message">
+                <p>
+                    "Identity"は私の一生の課題であると考えています。<br>
+                    周りから必要とされたい、という気持ちが強く、自分の存在価値はなんなのか、自分にしかできないことは何かを考えてしまうことが多いです。<br>
+                    <br>
+                    いろんなことに挑戦し幅広くこなせてきた反面、これなら誰にも負けない、という武器は何かと問われると弱いです。しかし、その多様な分野の制作経験はものづくりの中でいくらでも別の分野に応用でき、新しいアイデアに繋がると考えています。そしてそれが「自分にしかできないこと」に繋がればいいなと思っています。<br>
+
+                </p>
+            </div>
+            <div class="about__contact__head page-head">
+                <img src="<%= mix('/assets/images/contact.png')  %> ">
+            </div>
+            <div class="about__contact__form">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf7C9jg35l7d4MdITpluPw3iV0qIOexoy_A0L9rNnEOdgmrlA/formResponse">
+                    <ul>
+                        <li>
+                            <p>Name</p>
+                            <input type="text" name="entry.1637071599" placeholder="" required>
+                        </li>
+                        <li>
+                            <p>Your Email</p>
+                            <input type="text" name="entry.356705499" placeholder="" required>
+                        </li>
+                        <li>
+                            <p>Message</p>
+                            <textarea name="entry.1894791531" placeholder=""></textarea>
+                        </li>
+                    </ul>
+                    <p>*Google Formを埋め込んでいます。</p>
+                    <button type="submit" name="button" value="送信">Send</button>
+                </form>
+            </div>
         </div>
-    </section>
-</div>
+        <%- include('/partials/scroll-top') -%>
+    </div>
+</section>
+
 
 <%- include('/partials/footer') -%>
         

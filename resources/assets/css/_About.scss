@@ -1,5 +1,5 @@
 // アバウトページ
-#overlay{
+#about__overlay {
     top: 0;
     left: 0;
     position: fixed;
@@ -11,110 +11,119 @@
         display: none;
     }
 }
-.about-wrapper{
+.page-head {
+    @include pc {
+        padding-top:  120px;
+        padding-bottom: 100px;
+        width: 100%;
+    }
+    @include sp {
+        padding-top:  100px;
+        padding-bottom: 70px;
+        width: 100%;
+    }
+    img {
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 40px;
+        position: absolute;
+    }
+}
+.about {
     left: 0;
     right: 0;
     margin: auto;
     font-family: 'Lato',sans-serif;
-    @include pc{
+    @include pc {
         width: 70vw;
     }
-    @include sp{
+    @include sp {
         width: $work-width-sp;
     }
-    h1{
+    
+    h1 {
         font-size: 28px;
         font-weight: 300;
         margin: 14px 0;
     }
-    .about-text,.about-skills,.about-message{
+    .about__basic,.about__skills,.about__message {
         width: 100%;
-        p{
+        p {
             margin: 26px auto 60px;
             width: 96%;
         }
         
     }
-    .about-skills{
+    .about__skills {
         font-size: 20px;
         font-weight: 200;
     }
-    .about-message{
-        @include pc{
+    .about__message {
+        @include pc {
             margin: 140px auto;
         }
-        @include sp{
+        @include sp {
             margin: 60px auto;
         }
         
     }
-    #contact-top{
+    
+    .about__contact__form {
         padding-bottom: 100px;
-        // #arrow-down{
-        //     margin: 36px auto;
-        //     width: 12px;
-        // }
-        // #email-button{
-        //     @include pc{
-        //         width: 320px;
-        //     }
-        //     @include sp(){
-        //         width: 260px;
-        //     }
-        // }
-        form{
+        form {
             width: 80%;
             margin: 40px auto;
             right: 0;
             left: 0;
             display: block;
             font-family: 'Lato',sans-serif;
-            ul{
-                padding: 0;
-                li{
-                    
-                    margin: 60px auto;
-                    width: 100%;
-                    padding: 10px auto;
-                    p{
-                        margin: 10px auto;
-                        font-size: 22px;
-                    }
-                    
-                    input{
-                        font-size: 18px;
-                        width: 100%;
-                        outline: none;
-                        border: none;
-                        border-bottom: 1.3px solid $soft-black;
-                        appearance: none;
-                    }
-                    textarea{
-                        font-size: 18px;
-                        width: 100%;
-                        height: 120px;
-                        outline: none;
-                        border: 1.3px solid $soft-black;
-    
-                    }
-                }
+        }
+        ul {
+            padding: 0;
+            li {
+                margin: 60px auto;
+                width: 100%;
+                padding: 10px auto;
             }
-            
-            button{
-                font-size: 22px;
-                width: 140px;
-                height: 50px;
-                left: 0;
-                right:0;
-                margin: 100px auto;
-                display: block;
-                color: $soft-black;
-                border: 1.3px solid $soft-black;
-                transition: all 0.3s;
-                &:hover{
-                    background-color: $soft-black;
-                    color: rgb(250,250,250);
-                }
+        }
+        p {
+            margin: 10px auto;
+            font-size: 22px;
+        }
+        
+        input {
+            font-size: 18px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1.3px solid $soft-black;
+            appearance: none;
+            background-color: rgba($color: #000000, $alpha: 0);
+        }
+        textarea {
+            font-size: 18px;
+            width: 100%;
+            height: 120px;
+            outline: none;
+            border: 1.3px solid $soft-black;
+            background-color: rgba($color: #000000, $alpha: 0);
+
+        }
+        button {
+            font-size: 22px;
+            width: 140px;
+            height: 50px;
+            left: 0;
+            right:0;
+            margin: 100px auto;
+            display: block;
+            color: $soft-black;
+            border: 1.3px solid $soft-black;
+            transition: all 0.3s;
+            &:hover {
+                background-color: $soft-black;
+                color: rgb(250,250,250);
             }
         }
     }
