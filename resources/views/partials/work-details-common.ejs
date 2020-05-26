@@ -1,0 +1,71 @@
+
+
+<div class="work-details">
+    <h1><%= data.work_title %></h1>
+    <h2><%= data.category %></h2>
+    <div class="work-details__top-image">
+        <% if(data.top_image_type === 'img') { %> 
+            <img src="<%= mix(data.top_image)  %> ">
+        <% }else if(data.top_image_type === 'iframe'){ %> 
+            <%- data.top_image -%>
+        <% } %>
+    </div>
+    <div class="work-details__summary">
+        <ul>
+            <li>
+                <h3>Role</h3>
+                <p><%= data.role %></p>
+            </li>
+            <li>
+                <h3>Term</h3>
+                <p><%= data.term %></p>
+            </li>
+            <li>
+                <h3>Skills</h3>
+                <p><%= data.skills %></p>
+            </li>
+            <li>
+                <h3>Outline</h3>
+                <div class="work-details__outline">
+                    <p>
+                        <%- data.outline -%>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="work-details__sub-images">
+        <ul>
+            <% for(let i=0;i<data.sub_image_num;i++){ %> 
+                <li>
+                    <img src="<%= mix('/assets/images/' + data.sub_image_path[i])  %> ">
+                </li>
+            <% } %> 
+        </ul>
+    </div>
+    <div class="work-details__PR-text">
+        <p>
+            <%- data.work_PR_text -%> 
+        </p>
+    </div>
+    <div class="work-details__end">
+        <div class="work-details__end__point"></div>
+        <div class="work-details__end__point"></div>
+        <div class="work-details__end__point"></div>
+    </div>
+    <div class="work-details__other">
+        <h2>OTHER WORKS</h2>
+        <div class="work-details__other-nav">
+            <% if(data.have_previous) { %> 
+                <a id="work-details__other-nav__previous" href="<%= mix(data.previous_work_path)  %>">PREVIOUS</a>
+            <% } %>
+
+            <div id="work-details__vertical-line"></div>
+
+            <% if(data.have_next) { %> 
+                <a id="work-details__other-nav__next" href="<%= mix(data.next_work_path) %> ">NEXT</a>
+            <% } %>
+
+        </div>
+    </div>
+</div>
