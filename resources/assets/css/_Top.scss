@@ -1,4 +1,7 @@
 //トップページ
+.top__contents--laterP5{
+    display: none;
+}
 #top__title{
     position: absolute;
     @include pc{

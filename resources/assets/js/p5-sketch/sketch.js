@@ -194,12 +194,12 @@ export function sketch (p5){
         //コンテンツ表示
         if(count>220 && !endDraw){
             endDraw = true;
-            $('.contents').fadeIn(2000);
+            $('.top__contents--laterP5').fadeIn(2000);
             floatInit();
         }
         if(p5.windowWidth<480 && !endDraw){ //スマホならアニメーション飛ばす
             endDraw = true;
-            $('.contents').fadeIn(2000);
+            $('.top__contents--laterP5').fadeIn(2000);
             floatInit();
         }
     }
