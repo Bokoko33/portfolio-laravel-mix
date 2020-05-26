@@ -7,7 +7,7 @@ export default class DrawParticle{
         this.afterPosX = new Array();
         this.afterPosY = new Array();
         
-        for(var i=0;i<posNum;i++){
+        for(let i=0;i<posNum;i++){
             this.afterPosX[i] = this.pos.x;
             this.afterPosY[i] = this.pos.y;
         }
@@ -27,16 +27,16 @@ export default class DrawParticle{
     update(){
         //pattern1
         // 範囲内でランダム(noise)に動き回る計算
-        var xmin = this.offset - (this.fpos.x - this.pos.x);
-        var xmax = 2*this.offset - xmin;
+        let xmin = this.offset - (this.fpos.x - this.pos.x);
+        let xmax = 2*this.offset - xmin;
 
-        var ymin = this.offset - (this.fpos.y - this.pos.y);
-        var ymax = 2*this.offset - ymin;
+        let ymin = this.offset - (this.fpos.y - this.pos.y);
+        let ymax = 2*this.offset - ymin;
 
-        var x = this.p.map(this.p.noise(this.noiseArg),0,1,-xmin,xmax);
-        var y = this.p.map(this.p.noise(this.noiseArg),0,1,-ymin,ymax);
+        let x = this.p.map(this.p.noise(this.noiseArg),0,1,-xmin,xmax);
+        let y = this.p.map(this.p.noise(this.noiseArg),0,1,-ymin,ymax);
 
-        var v = this.p.createVector(x,y);
+        let v = this.p.createVector(x,y);
         this.vel.add(v);
         // this.vel.set(x,y);
         this.vel.mult(this.delta);
