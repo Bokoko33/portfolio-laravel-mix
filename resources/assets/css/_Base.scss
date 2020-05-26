@@ -1,10 +1,5 @@
 $soft-black :#2d2d2d;
-$work-width-pc:76vw;
-$work-width-sp:84vw;
-$thumb-width-pc:($work-width-pc - 1)/2;
-
-$view-width:100vw;
-$side-space-sum:200px;
+$lato:'Lato';
 
 $pc: 1024px; // PC
 $tab: 680px; // タブレット
@@ -33,18 +28,6 @@ body{
 }
 
 
-
-#background{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height:100vh;
-    background-color: rgb(250,250,250);
-    z-index: -100;
-}
-
-
 #defaultCanvas0{
     z-index: -20;
     top: 0;
@@ -66,13 +49,9 @@ ul{
     letter-spacing: 1.1px;
 }
 h1,h2,h3{
-    font-family: 'Lato',sans-serif;
+    font-family: $lato,sans-serif;
 }
 h1{
     letter-spacing: 2.2px;
 }
 
-
-
-
-//------------------
